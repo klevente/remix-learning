@@ -31,23 +31,32 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
       <h1>Welcome to Remix</h1>
+      <h2>Important Data:</h2>
       <p>{important}</p>
+
+      <h2>Not Important Data:</h2>
+      <h3>Not Important Data 1:</h3>
       <Suspense fallback={<p>Loading 1...</p>}>
         <Await resolve={notImportant1}>{(result) => <p>{result}</p>}</Await>
       </Suspense>
+      <h3>Not Important Data 2:</h3>
       <Suspense fallback={<p>Loading 2...</p>}>
         <Await resolve={notImportant2}>{(result) => <p>{result}</p>}</Await>
       </Suspense>
+      <h3>Not Important Data 3:</h3>
       <Suspense fallback={<p>Loading 3...</p>}>
         <Await resolve={notImportant3}>{(result) => <p>{result}</p>}</Await>
       </Suspense>
 
-      {/*<Suspense fallback={<p>Loading...</p>}>
+      <h2>Not Important Data Combined:</h2>
+      <Suspense fallback={<p>Loading all...</p>}>
         <Await resolve={notImportant1}>{(result) => <p>{result}</p>}</Await>
         <Await resolve={notImportant2}>{(result) => <p>{result}</p>}</Await>
         <Await resolve={notImportant3}>{(result) => <p>{result}</p>}</Await>
-      </Suspense>*/}
-      <p>More content here</p>
+      </Suspense>
+
+      <h2>Additional Static Content:</h2>
+      <p>More content here.</p>
     </div>
   );
 }
